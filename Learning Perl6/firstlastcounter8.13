@@ -1,0 +1,9 @@
+use v6;
+#take files provided as arguments, returning the first and last line along with the number of lines between them
+#calling .lines() by itself implies $*ARGFILES.lines()
+for lines() {
+state $count = 0;
+FIRST { .say, $*ARGFILES.on-switch = { $count = 0}, next}
+$count++;
+LAST {  say $count - 1, $_.say }
+}
